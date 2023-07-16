@@ -14,6 +14,3 @@
     })
 })();
 
-function visible() {
-    document.getElementById('submit').style.visibility = 'visible'
-}
