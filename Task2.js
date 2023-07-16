@@ -13,3 +13,7 @@
         document.body.classList.toggle("light-mode");
     })
 })();
+
+function visible() {
+    document.getElementById('submit').style.visibility = 'visible'
+}

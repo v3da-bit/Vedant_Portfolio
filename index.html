@@ -14,51 +14,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        function visible() {
-            document.getElementById('submit').style.visibility = 'visible'
-        }
-        function submit(e) {
-            e.preventDefault()
-            var params = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                subject: document.getElementsById("subject").value,
-                message: document.getElementById("message").value,
-            };
-            // (function () {
-            //     emailjs.init("5xV3vdH7PfND4KciS");
-            // })();
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "vedantkhamar975@gmail.com",
-                Password: "1CD35A024AE5FC374B2DA7FC734F665A3403",
-                To: 'vedantkhamar975@gmail.com',
-                From: "vedantkhamar975@gmail.com",
-                Subject: params.subject,
-                Body: `<h1>You have got a new mail from ${params.email}</h1>
-                <h1>The name is ${params.name}</h1>
-                <h1>Query is: ${params.message}</h1>`
-            }).then(
-                 alert(params.message)
-            );
-        //     const serviceID = "service_3nvh0mc";
-        //     const templateID = "template_kexnwfq";
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-        //     emailjs.send(serviceID, templateID, params)
-        //         .then(res => {
-        //             // alert("hi")
-        //             document.getElementById("name").value = "";
-        //             document.getElementById("email").value = "";
-        //             document.getElementById("message").value = "";
-        //             console.log(res);
-        //             alert("Your message sent successfully!!")
-
-        //         })
-        //         .catch(err => console.log(err));
-        }
-    </script>
 </head>
 
 <body class="main-content">
@@ -257,7 +214,7 @@
                     <h5>HSC<span> - Science</span></h5>
                     <p>
                         Completed my 12th Science from S.S. Divine School, Ahmedabad.<br>
-                        (Grade-60%)
+                        (Grade-54%)
                     </p>
                 </div>
                 <div class="timeline-item">
@@ -268,7 +225,7 @@
                     <h5>SSC</h5>
                     <p>
                         Completed my 10th from Ananya Vidyalaya, Kalol.<br>
-                        (Grade-78%)
+                        (Grade-75%)
                     </p>
                 </div>
         </section>
@@ -312,7 +269,7 @@
                         <img src="./assets/images/LinkedIn_icon_circle.svg.png" alt="">
                     </div>
                     <div class="hover-items">
-                        <h3>Project Source</h3>
+                        <h3>Check Out my Profile</h3>
                         <div class="icons">
                             <a href="https://www.linkedin.com/in/vedant-khamar-292544231/" class="icon">
                                 <i class="fab fa-linkedin"></i>
@@ -400,27 +357,25 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
-                            <div class="input-control i-c-2">
-                                <input type="text" onchange="visible()" id="name" required placeholder="YOUR NAME">
-                                <input type="email" onchange="visible()" id="email" required placeholder="YOUR EMAIL">
-                            </div>
-                            <div class="input-control">
-                                <input type="text" onchange="visible()" id="subject" required
-                                    placeholder="ENTER SUBJECT">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="message" onchange="visible()" id="message" cols="15" rows="8"
-                                    placeholder="Message Here..."></textarea>
-                            </div>
-                            <div class="submit-btn">
-                                <button class="main-btn" id="submit" onclick="submit()"
-                                    style="visibility:hidden ; background-color: transparent; border: 1px solid var(--color-secondary); height: 50px; width: 100px; border-radius: 40px; align-items: center; justify-content: center;">
-                                    <h1 class="btn-text" style="color: white;">Submit</h1>
-                                </button>
-                            </div>
+                        <div class="input-control i-c-2">
+                            <input type="text" onchange="visible()" id="name" placeholder="YOUR NAME">
+                            <input type="email" onchange="visible()" id="email" placeholder="YOUR EMAIL">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" onchange="visible()" id="subject" placeholder="ENTER SUBJECT">
+                        </div>
+                        <div class="input-control">
+                            <textarea name="message" onchange="visible()" id="message" cols="15" rows="8"
+                                placeholder="Message Here..."></textarea>
+                        </div>
+                        <div class="submit-btn">
+                            <button class="main-btn" id="submit" type="submit" onclick="submit(event)"
+                                style="visibility:hidden ; background-color: transparent; border: 1px solid var(--color-secondary); height: 50px; width: 100px; border-radius: 40px; align-items: center; justify-content: center;">
+                                <h1 class="btn-text" style="color: white;">Submit</h1>
+                            </button>
+                        </div>
 
-                        </form>
+
 
                     </div>
                 </div>
@@ -447,5 +402,33 @@
     </div>
     <script src="Task2.js"></script>
 </body>
+<script type="text/javascript">
+    function submit(e) {
+         e.preventDefault()
+        e.stopPropagation()
+        var params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+        };
+
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "vedantkhamar975@gmail.com",
+            Password: "1CD35A024AE5FC374B2DA7FC734F665A3403",
+            To: 'vedantkhamar975@gmail.com',
+            From: "vedantkhamar975@gmail.com",
+            Subject: params.subject,
+            Body: `<h1>You have got a new mail from ${params.email}</h1>
+        <h1>The name is ${params.name}</h1>
+        <h1>Query is: ${params.message}</h1>`
+        }).then(()=>{
+            alert('Your Query has been sent!');
+            document.location.reload()
+    });
+
+    }
+</script>
 
 </html>
