@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,58 @@
     <link rel="stylesheet" href="Task2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        function visible() {
+            document.getElementById('submit').style.visibility = 'visible'
+        }
+        function submit(e) {
+            e.preventDefault()
+            var params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementsById("subject").value,
+                message: document.getElementById("message").value,
+            };
+            // (function () {
+            //     emailjs.init("5xV3vdH7PfND4KciS");
+            // })();
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "vedantkhamar975@gmail.com",
+                Password: "1CD35A024AE5FC374B2DA7FC734F665A3403",
+                To: 'vedantkhamar975@gmail.com',
+                From: "vedantkhamar975@gmail.com",
+                Subject: params.subject,
+                Body: `<h1>You have got a new mail from ${params.email}</h1>
+                <h1>The name is ${params.name}</h1>
+                <h1>Query is: ${params.message}</h1>`
+            }).then(
+                 alert(params.message)
+            );
+        //     const serviceID = "service_3nvh0mc";
+        //     const templateID = "template_kexnwfq";
+
+        //     emailjs.send(serviceID, templateID, params)
+        //         .then(res => {
+        //             // alert("hi")
+        //             document.getElementById("name").value = "";
+        //             document.getElementById("email").value = "";
+        //             document.getElementById("message").value = "";
+        //             console.log(res);
+        //             alert("Your message sent successfully!!")
+
+        //         })
+        //         .catch(err => console.log(err));
+        }
+    </script>
 </head>
+
 <body class="main-content">
     <header class="container header active" id="home">
         <div class="header-content">
@@ -26,11 +76,12 @@
                     A Web Developer.
                 </h1>
                 <p>
-                    I'm a Full-Stack Web Developer, I love to create beautiful and functional websites. I am learning data science and 
+                    I'm a Full-Stack Web Developer, I love to create beautiful and functional websites. I am learning
+                    data science and
                     google cloud.
                 </p>
                 <div class="btn-con">
-                    <a href="https://drive.google.com/file/d/1UEWomOcqbFU-AOh0BgBMb0fCQZtMz74g/view" class="main-btn">
+                    <a href="https://drive.google.com/file/d/1Z_ILddHFYxsGaNc30jjHYt37VteFG9Nd/view" class="main-btn">
                         <span class="btn-text">Download Resume</span>
                         <span class="btn-icon"><i class="fas fa-download"></i></span>
                     </a>
@@ -47,11 +98,14 @@
                 <div class="left-about">
                     <h4>Information About me</h4>
                     <p>
-                        My self Vedant Khamar. I'm pursuing my bachelor's in Information Technology engineering at LDRP-ITR.
-                        I have knowledge about web languages like html,css and js. Currently I am learning about Data Science and Google Cloud.
+                        My self Vedant Khamar. I'm pursuing my bachelor's in Information Technology engineering at
+                        LDRP-ITR.
+                        I have knowledge about web languages like html,css and js. Currently I am learning about Data
+                        Science and Google Cloud.
                     </p>
                     <div class="btn-con">
-                        <a href="https://drive.google.com/file/d/1UEWomOcqbFU-AOh0BgBMb0fCQZtMz74g/view" class="main-btn">
+                        <a href="https://drive.google.com/file/d/1Z_ILddHFYxsGaNc30jjHYt37VteFG9Nd/view"
+                            class="main-btn">
                             <span class="btn-text">Download Resume</span>
                             <span class="btn-icon"><i class="fas fa-download"></i></span>
                         </a>
@@ -84,7 +138,7 @@
                             <p class="small-text">Month of <br /> Internship</p>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="about-stats">
@@ -246,7 +300,8 @@
                     <div class="hover-items">
                         <h3>Project Source</h3>
                         <div class="icons">
-                            <a href="https://www.cloudskillsboost.google/public_profiles/8a330f9b-1e86-4426-bc5f-25eea020b971" class="icon">
+                            <a href="https://www.cloudskillsboost.google/public_profiles/8a330f9b-1e86-4426-bc5f-25eea020b971"
+                                class="icon">
                                 <i class="fab fa-google"></i>
                             </a>
                         </div>
@@ -262,7 +317,7 @@
                             <a href="https://www.linkedin.com/in/vedant-khamar-292544231/" class="icon">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -306,7 +361,7 @@
                             </div>
                             <div class="contact-item">
                                 <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
+                                    <i class="fas fa-phone"></i>
                                     <span>Mobile Number</span>
                                 </div>
                                 <p>
@@ -336,26 +391,37 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="btn-con" style="margin-top: 20px;">
+                            <a href="https://drive.google.com/file/d/1Z_ILddHFYxsGaNc30jjHYt37VteFG9Nd/view"
+                                class="main-btn">
+                                <span class="btn-text">Download Resume</span>
+                                <span class="btn-icon"><i class="fas fa-download"></i></span>
+                            </a>
+                        </div>
                     </div>
                     <div class="right-contact">
                         <form action="" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input type="text" onchange="visible()" id="name" required placeholder="YOUR NAME">
+                                <input type="email" onchange="visible()" id="email" required placeholder="YOUR EMAIL">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                                <input type="text" onchange="visible()" id="subject" required
+                                    placeholder="ENTER SUBJECT">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea name="message" onchange="visible()" id="message" cols="15" rows="8"
+                                    placeholder="Message Here..."></textarea>
                             </div>
                             <div class="submit-btn">
-                                <a href="https://drive.google.com/file/d/1UEWomOcqbFU-AOh0BgBMb0fCQZtMz74g/view" class="main-btn">
-                                    <span class="btn-text">Download Resume</span>
-                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                </a>
+                                <button class="main-btn" id="submit" onclick="submit()"
+                                    style="visibility:hidden ; background-color: transparent; border: 1px solid var(--color-secondary); height: 50px; width: 100px; border-radius: 40px; align-items: center; justify-content: center;">
+                                    <h1 class="btn-text" style="color: white;">Submit</h1>
+                                </button>
                             </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -381,4 +447,5 @@
     </div>
     <script src="Task2.js"></script>
 </body>
+
 </html>
