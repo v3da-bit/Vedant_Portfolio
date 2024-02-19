@@ -373,13 +373,26 @@
                         <div class="submit-btn">
                             <button class="main-btn" id="submit" type="submit" onclick="submit(event)"
                                 style="  background-color: transparent; border: 1px solid var(--color-secondary); height: 50px; width: 100px; border-radius: 40px; align-items: center; justify-content: center;">
-                                <h1 class="btn-text" >Submit</h1>
+                                <h1 class="btn-text">Submit</h1>
                             </button>
                         </div>
 
 
 
                     </div>
+                </div>
+                <div class="Address">
+                    <div class="contact-item">
+                        <div class="icon">
+                            <h1><i class="fas fa-map-marker-alt" aria-hidden="true"></i> &nbsp; Current Location:</h1>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1491.21067598916!2d72.34400143516434!3d23.292527023970575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c22bd18709e41%3A0xaf25e49b47d7b926!2sSomeshwar%20Dham%20Society!5e0!3m2!1sen!2sin!4v1708368130035!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -406,7 +419,7 @@
 </body>
 <script type="text/javascript">
     function submit(e) {
-         e.preventDefault()
+        e.preventDefault()
         e.stopPropagation()
         var params = {
             name: document.getElementById("name").value,
@@ -425,10 +438,10 @@
             Body: `<h1>You have got a new mail from ${params.email}</h1>
         <h1>The name is ${params.name}</h1>
         <h1>Query is: ${params.message}</h1>`
-        }).then(()=>{
+        }).then(() => {
             alert('Your Query has been sent!');
             document.location.reload()
-    });
+        });
 
     }
 </script>
