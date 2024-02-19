@@ -699,6 +699,7 @@
   }
   .Address{
     margin-top: 40px;
+    margin-bottom: 40px;
     display: grid;
     grid-template-columns: 2;
     gap: 3;
@@ -708,12 +709,21 @@
     header {
       padding: 0 !important;
     }
-  
+    .Address{
+      margin-bottom: 60px;
+      margin-top: 20px;
+    }
+    .left-contact{
+      text-align: center;
+    }
     .theme-btn {
       width: 50px;
       height: 50px;
     }
-  
+    .map{
+      width: max-content;
+      height: min-content;
+    }
     .header-content {
       grid-template-columns: repeat(1, 1fr);
       padding-bottom: 6rem;
@@ -842,7 +852,7 @@
     .container {
       padding: 7rem 11rem;
     }
-  
+    
     .contact-content-con {
       flex-direction: column;
     }
@@ -873,7 +883,7 @@
       grid-template-columns: repeat(2, 1fr);
       margin-top: 6rem;
     }
-  
+    
     .portfolios {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -886,7 +896,10 @@
     .blogs {
       grid-template-columns: repeat(1, 1fr);
     }
-  
+    .left-contact{
+      text-align: center;
+    }
+    
     .portfolios {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -898,8 +911,9 @@
     .about-container .right-about {
       padding-top: 2.5rem;
     }
-  
+    
     .main-title h2 {
+      
       font-size: 4rem;
     }
     .main-title h2 span {
@@ -913,11 +927,17 @@
     .container {
       padding: 7rem 6rem;
     }
-  
+    .map{
+      width: max-content;
+      height:auto;
+    }
     .about-container .left-about {
       padding-right: 0rem;
     }
-  
+    .Address{
+      margin-bottom: 60px;
+      margin-top: 20px;
+    }
     .header-content {
       grid-template-columns: repeat(1, 1fr);
       padding-bottom: 6rem;
